@@ -10,6 +10,16 @@ while True:
         for num , item in enumerate(tasks,start=1):
 
             print(num,'.',item)
+        done = input('have you done any tasks [y/n] :')
+        if done == 'y':
+            n = int(input('enter the task which is done : '))
+            tasks[n-1]= tasks[n-1]+''+'[DONE]'
+            print('GOOD JOB!!!!')
+
+
+        else:
+            continue
+        
 
             
     elif opt == '2':
@@ -25,4 +35,3 @@ while True:
         print('successfully deleted')
     else:
         break
-
