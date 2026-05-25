@@ -4,9 +4,14 @@ print('1.view tasks')
 print('2.add tasks')
 print('3.remove tasks')
 print('4.exit')
+def save_file():
+    file = open('task.txt','w')
+    file.write(str(tasks))
+    file.close()
 while True:
     opt = input('enter operation :')
     if opt == '1':
+        
         for num , item in enumerate(tasks,start=1):
 
             print(num,'.',item)
@@ -25,6 +30,7 @@ while True:
     elif opt == '2':
         new = input('enter new task :')
         tasks.append(new)
+        save_file()
 
     elif opt=='3':
         for i in tasks:
