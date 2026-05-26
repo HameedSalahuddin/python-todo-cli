@@ -1,2 +1,5 @@
 sleep[DONE]
 code
+sleep
+learn git[DONE]
+finish todo cli

@@ -1,9 +1,19 @@
+import os
 tasks = []
+def clear_screen():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')        
+clear_screen()
+print('='*30)
+print('TO-DO'.center(30))
+print('='*30)
 print('MENU')
-print('1.view tasks')
-print('2.add tasks')
-print('3.remove tasks')
-print('4.exit')
+print('view  -> view tasks')
+print('add   ->  add tasks')
+print('delete-> remove tasks')
+print('exit  -> exit app')
 def save_file():
     file = open('task.txt','w')
     for i in tasks:
@@ -23,8 +33,8 @@ def read_file():
     will be present in it'''
 read_file()
 while True:
-    opt = input('enter operation :')
-    if opt == '1':
+    opt = input('>> ').lower()
+    if opt == 'view':
         for num , item in enumerate(tasks,start=1):
 
             print(num,'.',item)
@@ -41,12 +51,12 @@ while True:
         
 
             
-    elif opt == '2':
+    elif opt == 'add':
         new = input('enter new task :')
         tasks.append(new)
         save_file()
 
-    elif opt=='3':
+    elif opt=='delete':
         for i,item in enumerate(tasks,start=1):
 
             print(i,'.',item)
