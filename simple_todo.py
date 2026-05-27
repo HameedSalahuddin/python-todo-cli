@@ -1,11 +1,10 @@
 import os
+from rich.console import Console
+from rich.panel import Panel
+from rich.table import Table
+console = Console()
+console.clear()
 tasks = []
-def clear_screen():
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')        
-clear_screen()
 print('='*30)
 print('TO-DO'.center(30))
 print('='*30)
